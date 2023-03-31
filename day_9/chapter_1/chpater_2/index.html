@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="styleheet">
+    <!-- parseFloat(getElementByid('number').value) -->
+    <!-- 계산기 만들기 숙제 -->
+</head>
+
+<body>
+    <input type="number" id="number">
+    <button onClick="calculate(this)">+</button>
+    <button onClick="calculate(this)">-</button>
+    <button onClick="calculate(this)">*</button>
+    <button onClick="calculate(this)">/</button>
+    <div id="content"></div>
+<script>
+    let num1 = 0;
+    function calculate(obj){
+        let number = parseFloat(document.getElementById('number').value);
+        // let str1 = document.getElementById("num1").value;
+        // let str2 = document.getElementById("num2").value;
+        // let num1 = Number(str1);
+        // let num2 = Number(str2);
+        let symbol = obj.innerText;
+        switch(symbol){
+            case "+":
+                num1 += number;
+                break;
+            case "-":
+                num1 -= number;
+                break;
+            case "*":
+                console.log('곱하기?')
+                num1 *= number;
+                break;
+            case "/":
+                num1 /= number;
+                break;
+            break;
+        // default :
+        //     num1 = "사칙연산 칸은 +, -, *, / 만 입력하시오"
+        }
+        document.getElementById("content").innerHTML = "<h1>계산결과 :"+num1+'</h1>';   
+        }
+        
+</script>
+</body>
+</html>
